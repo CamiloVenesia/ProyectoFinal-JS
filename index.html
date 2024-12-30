@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.24/dist/tailwind.min.js"></script> <!-- Tailwind CSS -->
+</head>
+<body class="bg-gray-50 flex flex-col justify-start items-center min-h-screen font-roboto">
+
+    <header class="w-full bg-teal-600 text-white py-8 text-center shadow-lg">
+        <h1 class="text-3xl font-semibold">Gestión de Productos</h1>
+    </header>
+
+    <div class="container flex flex-wrap justify-center gap-8 mt-12 max-w-screen-xl">
+        <!-- Formulario y acciones -->
+        <div class="left bg-white p-8 shadow-lg rounded-lg w-full sm:w-1/3">
+            <form id="productForm" class="space-y-6">
+                <input type="text" id="productName" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Nombre del Producto" required>
+                <input type="text" id="productCategory" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Categoría" required>
+                <input type="number" id="productPrice" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Precio" required>
+                <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition-all">Agregar Producto</button>
+            </form>
+
+            <div class="actions mt-8 space-y-4">
+                <button id="viewAll" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all">Ver Todo</button>
+                <button id="filterUnder100" class="w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition-all">-100</button>
+                <button id="filterAbove100" class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-all">+100</button>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="right bg-white p-8 shadow-lg rounded-lg w-full sm:w-2/3">
+            <h2 class="text-2xl font-semibold mb-6">Productos</h2>
+            <div id="productList" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
